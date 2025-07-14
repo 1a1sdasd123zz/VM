@@ -1,5 +1,4 @@
 ﻿using System.Windows.Media;
-using System.Windows;
 using VM.Start.Common.Helper;
 
 namespace VM.Start.Dialogs.ViewModels

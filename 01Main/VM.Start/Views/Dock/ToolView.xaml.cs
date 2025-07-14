@@ -5,44 +5,33 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Automation.Peers;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using VM.Start.Common.Enums;
-using VM.Start.Common.Extension;
 using VM.Start.Common.Helper;
-using VM.Start.Core;
 using VM.Start.Dialogs.Views;
-using VM.Start.Events;
 using VM.Start.Models;
 using VM.Start.Services;
 using VM.Start.ViewModels.Dock;
-using static VM.Start.Views.Dock.ProcessView;
 
 namespace VM.Start.Views.Dock
 {
     /// <summary>
     /// ToolView.xaml 的交互逻辑
     /// </summary>
-    public partial class ToolView : UserControl
+    public partial class ToolView
     {
         #region Singleton
-        private static readonly ToolView _instance = new ToolView();
 
         private ToolView()
         {
             InitializeComponent();
-            this.DataContext = ToolViewModel.Ins;
+            DataContext = ToolViewModel.Ins;
         }
 
-        public static ToolView Ins
-        {
-            get { return _instance; }
-        }
+        public static ToolView Ins { get; } = new ToolView();
+
         #endregion
 
         #region Prop
@@ -59,7 +48,6 @@ namespace VM.Start.Views.Dock
 
         private string MultiSelectedStart { get; set; } //多选下开始的模块名称
         private string MultiSelectedEnd { get; set; } //多选下结束的模块名称
-        private int MultiSelectedCount { get; set; } //多选模块总数
         public List<string> SelectedProcessNameList { get; set; } = new List<string>(); // 连续选中模式下 选择的module
 
         //之前选中的ModuleNode
@@ -81,7 +69,7 @@ namespace VM.Start.Views.Dock
                 if (PluginService.PluginDic_Module[item].Category == "常用工具")
                 {
                     toolTreeNodeListes[0].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -96,7 +84,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "图像处理")
                 {
                     toolTreeNodeListes[1].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -111,7 +99,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "检测识别")
                 {
                     toolTreeNodeListes[2].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -126,7 +114,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "几何测量")
                 {
                     toolTreeNodeListes[3].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -141,7 +129,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "几何关系")
                 {
                     toolTreeNodeListes[4].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -156,7 +144,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "坐标标定")
                 {
                     toolTreeNodeListes[5].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -171,7 +159,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "对位工具")
                 {
                     toolTreeNodeListes[6].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -186,7 +174,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "逻辑工具")
                 {
                     toolTreeNodeListes[7].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -201,7 +189,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "系统工具")
                 {
                     toolTreeNodeListes[8].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -216,7 +204,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "变量工具")
                 {
                     toolTreeNodeListes[9].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -231,7 +219,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "文件通讯")
                 {
                     toolTreeNodeListes[10].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -246,7 +234,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "测试工具")
                 {
                     toolTreeNodeListes[11].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -261,7 +249,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "仪器仪表")
                 {
                     toolTreeNodeListes[12].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -276,7 +264,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "深度学习")
                 {
                     toolTreeNodeListes[13].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -291,7 +279,7 @@ namespace VM.Start.Views.Dock
                 else if (PluginService.PluginDic_Module[item].Category == "激光工具")
                 {
                     toolTreeNodeListes[14].Add(
-                        new ModuleToolNode()
+                        new ModuleToolNode
                         {
                             Name = PluginService.PluginDic_Module[item].ModuleName,
                             IconImage = new BitmapImage(
@@ -321,7 +309,7 @@ namespace VM.Start.Views.Dock
         private void btnDeleteProcess_Click(object sender, RoutedEventArgs e)
         {
             MessageView messageView = MessageView.Ins;
-            messageView.MessageBoxShow($"确认删除流程吗?", eMsgType.Warn, MessageBoxButton.OKCancel);
+            messageView.MessageBoxShow("确认删除流程吗?", eMsgType.Warn, MessageBoxButton.OKCancel);
             if (messageView.DialogResult == true)
             {
                 if (processTree.SelectedItem == null)
@@ -377,7 +365,6 @@ namespace VM.Start.Views.Dock
         /// <summary>
         /// 获取结构树的展开状态
         /// </summary>
-        /// <param name="nodes"></param>
         private void GetTreeNodesStatus(ItemsControl control)
         {
             if (control != null)
@@ -390,9 +377,9 @@ namespace VM.Start.Views.Dock
                     if (treeItem != null && treeItem.HasItems)
                     {
                         ModuleNode moduleNode = treeItem.DataContext as ModuleNode;
-                        NodesStatusDic[moduleNode.Name] = treeItem.IsExpanded;
+                        if (moduleNode != null) NodesStatusDic[moduleNode.Name] = treeItem.IsExpanded;
 
-                        GetTreeNodesStatus(treeItem as ItemsControl);
+                        GetTreeNodesStatus(treeItem);
                     }
                 }
             }
@@ -418,7 +405,7 @@ namespace VM.Start.Views.Dock
                     string processStartName = model.Name;
                     if (processStartName != SelectedNode.Name) //自己不能移动到自己下面
                     {
-                        if (IsMultiSelectedModel() == true)
+                        if (IsMultiSelectedModel())
                         {
                             ChangeProcessPos(
                                 MultiSelectedStart,
@@ -518,16 +505,16 @@ namespace VM.Start.Views.Dock
             }
         }
 
-        private void processTree_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        private void processTree_MouseMove(object sender, MouseEventArgs e)
         {
-            if (m_DragMoveFlag == true)
+            if (m_DragMoveFlag)
             {
                 Point pt = e.GetPosition(processTree);
                 if (Math.Abs(pt.Y - m_MousePressY) > 10 || Math.Abs(pt.X - m_MousePressX) > 10) //在y方向差异10像素 才开始拖动
                 {
                     string showText = "";
                     int width = 0;
-                    if (IsMultiSelectedModel() == true)
+                    if (IsMultiSelectedModel())
                     {
                         showText = $"[{MultiSelectedStart}] ~ [{MultiSelectedEnd}]";
                         width = 400;
@@ -546,7 +533,7 @@ namespace VM.Start.Views.Dock
                         showText
                     );
                     m_DragMoveFlag = false;
-                    DragDropModel data = new DragDropModel()
+                    DragDropModel data = new DragDropModel
                     {
                         Name = m_DragProcessName,
                         SourceName = "processTree"
@@ -565,7 +552,7 @@ namespace VM.Start.Views.Dock
         }
 
         //按键事件
-        private void processTree_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private void processTree_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Shift)
             {
@@ -629,7 +616,7 @@ namespace VM.Start.Views.Dock
         //鼠标左键弹起
         private void processTree_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (IsMultiSelectedModel() == true && Keyboard.Modifiers != ModifierKeys.Shift) //鼠标弹起 多选模式 取消显示
+            if (IsMultiSelectedModel() && Keyboard.Modifiers != ModifierKeys.Shift) //鼠标弹起 多选模式 取消显示
             {
                 CancelMultiSelect();
             }
@@ -678,7 +665,7 @@ namespace VM.Start.Views.Dock
                     //获取定位模块的位置
                     int index = processNameList.IndexOf(relativeProcessName);
 
-                    if (index == -1 && isNext == true) //添加在首
+                    if (index == -1 && isNext) //添加在首
                     {
                         processNameList.Insert(0, processStartName);
                     }
@@ -686,7 +673,7 @@ namespace VM.Start.Views.Dock
                     {
                         processNameList.Add(processStartName);
                     }
-                    else if (index != -1 && isNext == true) //插在后面
+                    else if (index != -1 && isNext) //插在后面
                     {
                         processNameList.Insert(index + 1, processStartName);
                     }
@@ -701,13 +688,13 @@ namespace VM.Start.Views.Dock
                     if (
                         ProcessNodeList
                             .FirstOrDefault(c => c.Name == processStartName)
-                            .ParentModuleNode != null
+                            ?.ParentModuleNode != null
                     )
                     {
                         //获取同级别的下一个结束
                         brotherList = ProcessNodeList
                             .FirstOrDefault(c => c.Name == processStartName)
-                            .ParentModuleNode.Children.Select(c => c.Name)
+                            ?.ParentModuleNode.Children.Select(c => c.Name)
                             .ToList();
                     }
                     else
@@ -736,7 +723,7 @@ namespace VM.Start.Views.Dock
                     curIndex = processNameList.IndexOf(processStartName); //当前模块的位置
                     int endIndex = processNameList.IndexOf(endModuleName); //结束的位置
 
-                    List<string> tempList = CloneObject.DeepCopy<List<string>>(processNameList); //必须先准备一个副本 不能在foreach里删除自己的元素,会导致跌倒器更新错位
+                    List<string> tempList = CloneObject.DeepCopy(processNameList); //必须先准备一个副本 不能在foreach里删除自己的元素,会导致跌倒器更新错位
 
                     //获取定位模块的位置
                     for (int i = curIndex; i < endIndex + 1; i++)
@@ -769,9 +756,6 @@ namespace VM.Start.Views.Dock
         /// <summary>
         /// 添加一个模块
         /// </summary>
-        /// <param name="curModuleName">要追加的模块目标位置模块名称</param>
-        /// <param name="info">模块信息</param>
-        /// <param name="isNext">是否在后方追加</param>
         public void UpdateTree(string selectedNoteName = "")
         {
             ProcessNodeList.Clear();
@@ -849,7 +833,7 @@ namespace VM.Start.Views.Dock
         {
             foreach (ModuleNode moduleNode in ProcessNodeList)
             {
-                if (moduleNode.IsMultiSelected == true)
+                if (moduleNode.IsMultiSelected)
                 {
                     return moduleNode.IsMultiSelected;
                 }
@@ -931,7 +915,6 @@ namespace VM.Start.Views.Dock
 
             MultiSelectedStart = dic[dic.Keys.Min()];
             MultiSelectedEnd = dic[dic.Keys.Max()];
-            MultiSelectedCount = dic.Keys.Max() - dic.Keys.Min() + 1;
             //将结束模块也加入
             foreach (ModuleNode moduleNode in ProcessNodeList)
             {
@@ -960,7 +943,6 @@ namespace VM.Start.Views.Dock
                 item.IsMultiSelected = false;
             }
             SelectedProcessNameList.Clear();
-            MultiSelectedCount = 0;
         }
 
         /// <summary>
@@ -1084,7 +1066,7 @@ namespace VM.Start.Views.Dock
                         24,
                         toolTreeNode.Name
                     );
-                    DragDropModel data = new DragDropModel()
+                    DragDropModel data = new DragDropModel
                     {
                         Name = toolTreeNode.Name,
                         SourceName = "tool"
@@ -1092,7 +1074,7 @@ namespace VM.Start.Views.Dock
                     DragDrop.DoDragDrop(listbox, data, DragDropEffects.Copy); //增加模块是 copy
                     //
                 }
-                else if (toolTreeNode != null && toolTreeNode.IsCategory == true)
+                else if (toolTreeNode != null && toolTreeNode.IsCategory)
                 {
                     e.Handled = true;
                 }
@@ -1183,8 +1165,7 @@ namespace VM.Start.Views.Dock
                 }
                 node.DisplayName = name;
                 var pro = Solution.Ins.ProjectList
-                    .Where(o => o.ProjectInfo.ProcessName == moduleName)
-                    .First();
+                    .First(o => o.ProjectInfo.ProcessName == moduleName);
                 if (pro == null)
                     return;
                 pro.ProjectInfo.ProcessName = name;
@@ -1265,17 +1246,17 @@ namespace VM.Start.Views.Dock
         /// <param name="e"></param>
         private void listBox_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
-            var listbox = sender as System.Windows.Controls.ListBox;
+            var listbox = sender as ListBox;
             var eventArg = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
-            eventArg.RoutedEvent = UIElement.MouseWheelEvent;
+            eventArg.RoutedEvent = MouseWheelEvent;
             eventArg.Source = sender;
-            listbox.RaiseEvent(eventArg);
+            if (listbox != null) listbox.RaiseEvent(eventArg);
         }
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             var tb = sender as TextBox;
-            if (tb.Text == "")
+            if (tb != null && tb.Text == "")
             {
                 SetListItemsSource();
             }

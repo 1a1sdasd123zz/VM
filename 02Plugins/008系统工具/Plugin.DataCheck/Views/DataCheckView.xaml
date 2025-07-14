@@ -23,9 +23,6 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
-                    <cvt:EnumConverter x:Key="EnumConverter"/>
-                    <cvt:EnumToVisibilityConverter x:Key="EnumToVisibilityConverter"/>
-                    <cvt:StatusConverter x:Key="StatusConverter"/>
                 </ResourceDictionary>
                 <ResourceDictionary   Source="pack://application:,,,/VM.Start;component/Assets/Collection.xaml"/>
             </ResourceDictionary.MergedDictionaries>
@@ -79,8 +76,8 @@
                     <Button Content="删除" Margin="0,30" Command="{Binding DataOperateCommand}"  CommandParameter="Delete"/>
                     <Button Content="上移" Command="{Binding DataOperateCommand}" CommandParameter="UpMove"/>
                     <Button Content="下移" Margin="0,30" Command="{Binding DataOperateCommand}" CommandParameter="DownMove"/>
-                    <TextBlock Text="综合判定：" Margin="0,30,0,10" TextAlignment="Center" FontSize="22"></TextBlock>
-                    <TextBlock Text="{Binding Result}" TextAlignment="Center" FontSize="22"></TextBlock>
+                    <TextBlock Text="综合判定：" Margin="0,30,0,10" TextAlignment="Center" FontSize="22" />
+                    <TextBlock Text="{Binding Result}" TextAlignment="Center" FontSize="22" />
                 </StackPanel>
             </Border>
         </Grid>

@@ -253,8 +253,7 @@
                 </TabItem>
             </TabControl>
             <GridSplitter Grid.Column="1"/>
-            <WinFormHost:WindowsFormsHost Margin="5" Grid.Column="2" x:Name="winFormHost">
-            </WinFormHost:WindowsFormsHost>
+            <WinFormHost:WindowsFormsHost Margin="5" Grid.Column="2" x:Name="winFormHost" />
 
         </Grid>
         <Border Grid.Row="1" BorderBrush="White" BorderThickness="0 0.5 0 0">

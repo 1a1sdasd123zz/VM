@@ -38,13 +38,13 @@
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="0,3,0,0">
 			<ToggleButton Command="EditingCommands.ToggleBold" CommandTarget="{Binding RichTextBox}">
-				<Image Source="/ICSharpCode.WpfDesign.Designer;component/Images/edit-bold.png"></Image>
+				<Image Source="/ICSharpCode.WpfDesign.Designer;component/Images/edit-bold.png" />
 			</ToggleButton>
 			<ToggleButton Command="EditingCommands.ToggleItalic" CommandTarget="{Binding RichTextBox}" Margin="3,0,0,0">
-				<Image Source="/ICSharpCode.WpfDesign.Designer;component/Images/edit-italic.png"></Image>
+				<Image Source="/ICSharpCode.WpfDesign.Designer;component/Images/edit-italic.png" />
 			</ToggleButton>
 			<ToggleButton Command="EditingCommands.ToggleUnderline" CommandTarget="{Binding RichTextBox}" Margin="3,0,0,0">
-				<Image Source="/ICSharpCode.WpfDesign.Designer;component/Images/edit-underline.png"></Image>
+				<Image Source="/ICSharpCode.WpfDesign.Designer;component/Images/edit-underline.png" />
 			</ToggleButton>
 		</StackPanel>
 	</StackPanel>

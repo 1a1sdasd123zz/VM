@@ -1,9 +1,5 @@
-﻿using System;
-using System.CodeDom.Compiler;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Markup;
 using MahApps.Metro.Controls;
 using VM.Start.UIDesign.Dialog.ViewModels;
 

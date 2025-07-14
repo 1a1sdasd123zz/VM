@@ -1,14 +1,9 @@
 ﻿using HalconDotNet;
-using MahApps.Metro.Controls;
-using ScottPlot.Drawing.Colormaps;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using VM.Halcon;
 using VM.Halcon.Config;
 using VM.Start.Common.Enums;

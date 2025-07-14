@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VM.Start.Common.Helper;
 using VM.Start.Core;
-using VM.Start.Dialogs.Views;
 using VM.Start.Events;
 using VM.Start.Models;
 using VM.Start.Services;

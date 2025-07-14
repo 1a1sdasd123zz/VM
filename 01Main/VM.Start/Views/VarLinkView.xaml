@@ -29,9 +29,7 @@
                  >
     <Window.Resources>
         <ResourceDictionary>
-            <cvt:Bool2VisibilityConverter x:Key="Bool2VisibilityConverter"/>
             <cvt:ObjectToStringConverter x:Key="ObjectToStringConverter"/>
-            <rightControl:RightControl x:Key="RightControl"></rightControl:RightControl>
         </ResourceDictionary>
     </Window.Resources>
     <mah:MetroWindow.LeftWindowCommands>
@@ -78,8 +76,7 @@
         </TabControl>
         <Border Grid.Row="1" BorderBrush="White" BorderThickness="0 0.5 0 0">
             <DockPanel LastChildFill="True">
-                <StackPanel Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                </StackPanel>
+                <StackPanel Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="btnCancel" Content="取消" HorizontalAlignment="Right" Margin="10 0" Click="btnCancel_Click"/>
                     <Button x:Name="btnConfirm" Content="确认" HorizontalAlignment="Right" Margin="10 0" Command="{Binding ConfirmCommand}"

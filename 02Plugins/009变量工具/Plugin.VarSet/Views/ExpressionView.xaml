@@ -30,9 +30,7 @@
             <RowDefinition/>
             <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
-        <WinFormHost:WindowsFormsHost Margin="1" Grid.Row="0" x:Name="winFormHost">
-
-        </WinFormHost:WindowsFormsHost>
+        <WinFormHost:WindowsFormsHost Margin="1" Grid.Row="0" x:Name="winFormHost" />
         <TabControl Style="{StaticResource VerTabControl}" Grid.Row="1">
             <TabControl.Resources>
                 <Style TargetType="TabItem" BasedOn="{StaticResource VerTabItem}"/>
@@ -76,8 +74,7 @@
         </TabControl>
         <Border Grid.Row="2" BorderBrush="White" BorderThickness="0 0.5 0 0">
             <DockPanel LastChildFill="True">
-                <StackPanel Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                </StackPanel>
+                <StackPanel Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="btnCheck" Content="检查" HorizontalAlignment="Right" Margin="10 0" Click="btnCheck_Click" />
                     <Button x:Name="btnCancel" Content="取消" HorizontalAlignment="Right" Margin="10 0" Click="btnCancel_Click"/>

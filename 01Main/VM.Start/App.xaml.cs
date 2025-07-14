@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using VM.Start.Common.Helper;
@@ -14,7 +10,6 @@ using VM.Start.PersistentData;
 using VM.Start.Views;
 using WPFLocalizeExtension.Engine;
 using VM.Start.Common.Provide;
-using AvalonDock.Themes.VS2013.Themes;
 using VM.Start.Services;
 
 namespace VM.Start

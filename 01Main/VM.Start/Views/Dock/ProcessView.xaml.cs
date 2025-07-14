@@ -1,24 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Automation.Peers;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using VM.Start.Common;
+using EventMgrLib;
 using VM.Start.Common.Enums;
 using VM.Start.Common.Extension;
 using VM.Start.Common.Helper;
@@ -26,7 +16,6 @@ using VM.Start.Common.Provide;
 using VM.Start.Core;
 using VM.Start.Dialogs.Views;
 using VM.Start.Events;
-using VM.Start.Localization;
 using VM.Start.Models;
 using VM.Start.Services;
 using VM.Start.ViewModels.Dock;
@@ -44,7 +33,7 @@ namespace VM.Start.Views.Dock
         private ProcessView()
         {
             InitializeComponent();
-            this.DataContext = ProcessViewModel.Ins;
+            DataContext = ProcessViewModel.Ins;
             //m_CurProjectID = Solution.Ins.CreateProject();
             //Solution.Ins.CurrentProject = Solution.Ins.GetProjectById(m_CurProjectID);
         }
@@ -169,7 +158,7 @@ namespace VM.Start.Views.Dock
 
                     if (moduleName != SelectedNode.Name) //自己不能移动到自己下面
                     {
-                        if (IsMultiSelectedModel() == true)
+                        if (IsMultiSelectedModel())
                         {
                             ChangeModulePos(
                                 MultiSelectedStart,
@@ -437,7 +426,7 @@ namespace VM.Start.Views.Dock
                     //获取定位模块的位置
                     int index = modulenameList.IndexOf(relativeModuleName);
 
-                    if (index == -1 && isNext == true) //添加在首
+                    if (index == -1 && isNext) //添加在首
                     {
                         modulenameList.Insert(0, moduleStartName);
                     }
@@ -445,7 +434,7 @@ namespace VM.Start.Views.Dock
                     {
                         modulenameList.Add(moduleStartName);
                     }
-                    else if (index != -1 && isNext == true) //插在后面
+                    else if (index != -1 && isNext) //插在后面
                     {
                         modulenameList.Insert(index + 1, moduleStartName);
                     }
@@ -518,7 +507,7 @@ namespace VM.Start.Views.Dock
                     curIndex = modulenameList.IndexOf(moduleStartName); //当前模块的位置
                     int endIndex = modulenameList.IndexOf(endModuleName); //结束的位置
 
-                    List<string> tempList = CloneObject.DeepCopy<List<string>>(modulenameList); //必须先准备一个副本 不能在foreach里删除自己的元素,会导致跌倒器更新错位
+                    List<string> tempList = CloneObject.DeepCopy(modulenameList); //必须先准备一个副本 不能在foreach里删除自己的元素,会导致跌倒器更新错位
 
                     //获取定位模块的位置
                     for (int i = curIndex; i < endIndex + 1; i++)
@@ -554,7 +543,7 @@ namespace VM.Start.Views.Dock
         {
             foreach (ModuleNode moduleNode in ModuleNodeList)
             {
-                if (moduleNode.IsMultiSelected == true)
+                if (moduleNode.IsMultiSelected)
                 {
                     return moduleNode.IsMultiSelected;
                 }
@@ -618,16 +607,16 @@ namespace VM.Start.Views.Dock
             }
         }
 
-        private void moduleTree_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        private void moduleTree_MouseMove(object sender, MouseEventArgs e)
         {
-            if (m_DragMoveFlag == true)
+            if (m_DragMoveFlag)
             {
                 Point pt = e.GetPosition(moduleTree);
                 if (Math.Abs(pt.Y - m_MousePressY) > 10 || Math.Abs(pt.X - m_MousePressX) > 10) //在y方向差异10像素 才开始拖动
                 {
                     string showText = "";
                     int width = 0;
-                    if (IsMultiSelectedModel() == true)
+                    if (IsMultiSelectedModel())
                     {
                         showText = $"[{MultiSelectedStart}] ~ [{MultiSelectedEnd}]";
                         width = 400;
@@ -646,7 +635,7 @@ namespace VM.Start.Views.Dock
                         showText
                     );
                     m_DragMoveFlag = false;
-                    DragDropModel data = new DragDropModel()
+                    DragDropModel data = new DragDropModel
                     {
                         Name = m_DragModuleName,
                         SourceName = "moduleTree"
@@ -665,7 +654,7 @@ namespace VM.Start.Views.Dock
         }
 
         //按键事件
-        private void moduleTree_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private void moduleTree_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Shift)
             {
@@ -740,7 +729,7 @@ namespace VM.Start.Views.Dock
         //鼠标左键弹起
         private void ModuleTree_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (IsMultiSelectedModel() == true && Keyboard.Modifiers != ModifierKeys.Shift) //鼠标弹起 多选模式 取消显示
+            if (IsMultiSelectedModel() && Keyboard.Modifiers != ModifierKeys.Shift) //鼠标弹起 多选模式 取消显示
             {
                 CancelMultiSelect();
             }
@@ -905,7 +894,8 @@ namespace VM.Start.Views.Dock
                     endName = project.ModuleList[i].ModuleParam.ModuleName;
                     break;
                 }
-                else if (project.ModuleList[i].ModuleParam.ModuleName.StartsWith("结束"))
+
+                if (project.ModuleList[i].ModuleParam.ModuleName.StartsWith("结束"))
                 {
                     if (s_ItemStack.Count > 0)
                     {
@@ -928,7 +918,8 @@ namespace VM.Start.Views.Dock
                     startName = project.ModuleList[i].ModuleParam.ModuleName;
                     break;
                 }
-                else if (project.ModuleList[i].ModuleParam.ModuleName.StartsWith("如果"))
+
+                if (project.ModuleList[i].ModuleParam.ModuleName.StartsWith("如果"))
                 {
                     if (s_ItemStack.Count > 0)
                     {
@@ -994,7 +985,7 @@ namespace VM.Start.Views.Dock
         private void moduleTree_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             m_DragMoveFlag = false;
-            EventMgrLib.EventMgr.Ins.GetEvent<ModuleOutChangedEvent>().Publish();
+            EventMgr.Ins.GetEvent<ModuleOutChangedEvent>().Publish();
         }
 
         public void ClearStatus()
@@ -1040,8 +1031,6 @@ namespace VM.Start.Views.Dock
                     findNote.StatusImage = null;
                     findNote.StatusColor = Brushes.Transparent;
                     findNote.IsRunning = true;
-                    break;
-                default:
                     break;
             }
         }
@@ -1169,7 +1158,7 @@ namespace VM.Start.Views.Dock
                     {
                         ModuleNode moduleNode = treeItem.DataContext as ModuleNode;
                         NodesStatusDic[moduleNode.Name] = treeItem.IsExpanded;
-                        GetTreeNodesStatus(treeItem as ItemsControl);
+                        GetTreeNodesStatus(treeItem);
                     }
                 }
             }
@@ -1209,7 +1198,7 @@ namespace VM.Start.Views.Dock
                             findNote = moduleNode;
                             return;
                         }
-                        GetTreeNode(treeItem as ItemsControl, moduleParam);
+                        GetTreeNode(treeItem, moduleParam);
                     }
                 }
             }
@@ -1279,7 +1268,8 @@ namespace VM.Start.Views.Dock
                     AddModule(preModuleBase.ModuleParam.ModuleName, "条件分支", true, true);
                     return;
                 }
-                else if (moduleName.StartsWith("否则如果")) { }
+
+                if (moduleName.StartsWith("否则如果")) { }
                 else if (moduleName.StartsWith("否则"))
                 {
                     ModuleBase preModuleBase = Solution.Ins.CurrentProject.ModuleList[
@@ -1419,7 +1409,7 @@ namespace VM.Start.Views.Dock
 
         private void miDeleteModule_Click(object sender, RoutedEventArgs e)
         {
-            if (IsMultiSelectedModel() == true)
+            if (IsMultiSelectedModel())
             {
                 List<int> removeIndex = new List<int>();
                 for (int i = 0; i < moduleTree.Items.Count; i++)
@@ -1455,7 +1445,6 @@ namespace VM.Start.Views.Dock
                         }
                         else if (moduleBase.ModuleParam.ModuleName.StartsWith("结束"))
                         {
-                            continue;
                         }
                         else if (moduleBase.ModuleParam.ModuleName.StartsWith("循环开始"))
                         {
@@ -1477,7 +1466,6 @@ namespace VM.Start.Views.Dock
                         }
                         else if (moduleBase.ModuleParam.ModuleName.StartsWith("循环结束"))
                         {
-                            continue;
                         }
                         else if (moduleBase.ModuleParam.ModuleName.StartsWith("坐标补正开始"))
                         {
@@ -1499,7 +1487,6 @@ namespace VM.Start.Views.Dock
                         }
                         else if (moduleBase.ModuleParam.ModuleName.StartsWith("坐标补正结束"))
                         {
-                            continue;
                         }
                         else
                         {
@@ -1648,8 +1635,6 @@ namespace VM.Start.Views.Dock
                             case eModuleTreeOperateType.ModifyBreakPoint:
                                 item.IsEnableBreakPoint = !item.IsEnableBreakPoint;
                                 return;
-                            default:
-                                break;
                         }
                     }
                     RecursionChild(item.Children, moduleName, operateType, remarks);

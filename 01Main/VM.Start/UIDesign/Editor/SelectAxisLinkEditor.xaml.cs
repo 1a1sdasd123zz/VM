@@ -1,9 +1,5 @@
-﻿using System;
-using System.CodeDom.Compiler;
-using System.ComponentModel;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Markup;
 using ICSharpCode.WpfDesign.PropertyGrid;
 using VM.Start.UIDesign.Control;
 using VM.Start.UIDesign.Dialog.ViewModels;

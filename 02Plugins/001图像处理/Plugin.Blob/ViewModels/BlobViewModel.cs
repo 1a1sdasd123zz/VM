@@ -1,18 +1,11 @@
 ﻿using EventMgrLib;
 using HalconDotNet;
-using HandyControl.Controls;
 using Plugin.Blob.Views;
-using Plugin.GrabImage.Model;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
-using System.Windows.Media;
 using VM.Halcon;
 using VM.Halcon.Config;
 using VM.Halcon.Model;
@@ -24,10 +17,8 @@ using VM.Start.Common.Provide;
 using VM.Start.Core;
 using VM.Start.Dialogs.Views;
 using VM.Start.Events;
-using VM.Start.Models;
 using VM.Start.ViewModels;
 using VM.Start.Views.Dock;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace Plugin.Blob.ViewModels
 {
@@ -444,13 +435,12 @@ namespace Plugin.Blob.ViewModels
                     view.mWindowH = new VMHWindowControl();
                     view.winFormHost.Child = view.mWindowH;
                 }
-                if (InputImageLinkText == null || InputImageLinkText =="")
+                if (string.IsNullOrEmpty(InputImageLinkText))
                 {
                     SetDefaultLink();
                     if (InputImageLinkText == null) return;
                 }
                 GetDispImage(InputImageLinkText);
-                //view.mWindowH.DispObj(DispImage);
                 ImageChanged();
                 ThresholdChanged();
                 view.mWindowH.hControl.MouseUp += HControl_MouseUp;

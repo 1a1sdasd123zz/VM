@@ -44,9 +44,7 @@
 
     <Window.Resources>
         <ResourceDictionary>
-            <cvt:Bool2VisibilityConverter x:Key="Bool2VisibilityConverter"/>
             <cvt:Bool2ColorConverter x:Key="Bool2ColorConverter"/>
-            <rightControl:RightControl x:Key="RightControl"></rightControl:RightControl>
         </ResourceDictionary>
     </Window.Resources>
     <mah:MetroWindow.LeftWindowCommands>
@@ -492,18 +490,13 @@
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="气缸配置">
-                
-            </TabItem>
-            <TabItem Header="曲线配置">
-                
-            </TabItem>
+            <TabItem Header="气缸配置" />
+            <TabItem Header="曲线配置" />
         </TabControl>
 
         <Border Grid.Row="1" BorderBrush="White" BorderThickness="0 0.5 0 0">
             <DockPanel LastChildFill="True">
-                <StackPanel Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                </StackPanel>
+                <StackPanel Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="btnCancel" Content="取消" HorizontalAlignment="Right" Margin="10 0" Click="btnCancel_Click"/>
                     <Button x:Name="btnConfirm" Content="确认" HorizontalAlignment="Right" Margin="10 0" Command="{Binding ConfirmCommand}"

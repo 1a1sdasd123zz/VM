@@ -1,17 +1,12 @@
 ﻿using ICSharpCode.CodeCompletion;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using VM.Start.Dialogs.Views;
-using VM.Start.Common.Enums;
 using VM.Start.Common.Provide;
 using VM.Start.Common;
 using VM.Start.Events;
-using HalconDotNet;
 using System.Xml;
 
 namespace VM.Start.Script

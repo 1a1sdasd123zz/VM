@@ -3,13 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using System.Windows;
-using System.Windows.Forms;
 using VM.Start.Common.Provide;
 
 namespace DMSkin.Socket

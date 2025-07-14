@@ -30,9 +30,7 @@
     WindowStartupLocation="CenterScreen">
     <FrameworkElement.Resources>
         <ResourceDictionary>
-            <cvt:Bool2VisibilityConverter x:Key="Bool2VisibilityConverter" />
             <cvt:ObjectToStringConverter x:Key="ObjectToStringConverter" />
-            <rightControl:RightControl x:Key="RightControl" />
         </ResourceDictionary>
     </FrameworkElement.Resources>
     <mah:MetroWindow.LeftWindowCommands>
@@ -78,10 +76,6 @@
             Style="{StaticResource ModuleListHorTabControl}">
             <FrameworkElement.Resources>
                 <ResourceDictionary>
-                    <Style
-                        x:Key="{x:Type TabItem}"
-                        BasedOn="{StaticResource ModuleListVerTabItem}"
-                        TargetType="{x:Type TabItem}" />
                 </ResourceDictionary>
             </FrameworkElement.Resources>
             <TabControl.ContentTemplate>

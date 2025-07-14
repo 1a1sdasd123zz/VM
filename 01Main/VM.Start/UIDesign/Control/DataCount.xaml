@@ -11,16 +11,6 @@
 				<StackPanel>
 					<FrameworkElement.Resources>
 						<ResourceDictionary>
-							<Style
-								TargetType="{x:Type TextBlock}"
-								x:Key="{x:Type TextBlock}">
-								<Setter
-									Property="HorizontalAlignment"
-									Value="Left" />
-								<Setter
-									Property="Margin"
-									Value="5" />
-							</Style>
 						</ResourceDictionary>
 					</FrameworkElement.Resources>
 					<TextBlock
@@ -38,16 +28,6 @@
 					Grid.Column="1">
 					<FrameworkElement.Resources>
 						<ResourceDictionary>
-							<Style
-								TargetType="{x:Type TextBlock}"
-								x:Key="{x:Type TextBlock}">
-								<Setter
-									Property="HorizontalAlignment"
-									Value="Right" />
-								<Setter
-									Property="Margin"
-									Value="5" />
-							</Style>
 						</ResourceDictionary>
 					</FrameworkElement.Resources>
 					<TextBlock

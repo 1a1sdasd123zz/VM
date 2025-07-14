@@ -1,22 +1,14 @@
-﻿using HalconDotNet;
-using MahApps.Metro.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using VM.Halcon.Config;
 using VM.Start.Common.Enums;
 using VM.Start.Common.Helper;
 using VM.Start.Common.Provide;
 using VM.Start.Events;
 using VM.Start.Models;
 using VM.Start.Services;
-using VM.Start.Views;
 
 namespace VM.Start.Core
 {

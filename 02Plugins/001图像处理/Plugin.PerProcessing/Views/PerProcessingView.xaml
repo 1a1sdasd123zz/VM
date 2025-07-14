@@ -12,7 +12,6 @@
              xmlns:Converter="clr-namespace:VM.Start.Assets.Converter;assembly=VM.Start" x:Class="Plugin.PerProcessing.Views.PerProcessingView"
              Height="680" Width="980" Icon="/Plugin.PerProcessing;component/Assets/Images/Tool/PerProcessing.png" Loaded="ModuleViewBase_Loaded" >
     <vb:ModuleViewBase.Resources>
-        <Converter:Bool2VisibilityConverter x:Key="Bool2VisibilityConverter"/>
     </vb:ModuleViewBase.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -396,8 +395,7 @@
                 </TabItem>
             </TabControl>
             <GridSplitter Grid.Column="1"/>
-            <WinFormHost:WindowsFormsHost Margin="5" Grid.Column="2" x:Name="winFormHost">
-            </WinFormHost:WindowsFormsHost>
+            <WinFormHost:WindowsFormsHost Margin="5" Grid.Column="2" x:Name="winFormHost" />
 
         </Grid>
         <Border Grid.Row="1" BorderBrush="White" BorderThickness="0 0.5 0 0">

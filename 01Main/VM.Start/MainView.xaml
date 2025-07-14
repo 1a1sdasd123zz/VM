@@ -8,7 +8,6 @@
     xmlns:dock="clr-namespace:VM.Start.Views.Dock"
     xmlns:helper="clr-namespace:VM.Start.Common.Helper"
     xmlns:lex="http://wpflocalizeextension.codeplex.com"
-    xmlns:local="clr-namespace:VM.Start.Views"
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:per="clr-namespace:VM.Start.PersistentData"
@@ -46,8 +45,6 @@
                     <rightControl:RightControl x:Key="RightControl" />
                     <rightControl:IsEnableControl x:Key="IsEnableControl" />
                     <per:SystemConfig x:Key="systemConfig" />
-                    <cvt:InvertBoolConverter x:Key="InvertBoolConverter" />
-                    <cvt:Bool2ColorConverter x:Key="Bool2ColorConverter" />
                     <Style BasedOn="{StaticResource MahApps.Styles.MenuItem}" TargetType="MenuItem">
                         <Style.Triggers>
                             <Trigger Property="IsChecked" Value="True">
@@ -331,7 +328,7 @@
                     IsEnabled="{Binding Source={StaticResource IsEnableControl}, Path=Ins.SolutionList}"
                     Style="{StaticResource NavOperateButtonStyle}"
                     ToolTip="{lex:Loc Key=SolutionList}"
-                    Visibility="{Binding Source={StaticResource RightControl}, Path=Ins.SolutionList, Converter={StaticResource Bool2VisibilityConverter}}" />
+                    Visibility="{Binding Source={StaticResource RightControl}, Path=Ins.SolutionList, Converter={StaticResource Bool2VisibilityConverter}}" HorizontalAlignment="Left" />
                 <Button
                     Command="{Binding NavOperateCommand}"
                     CommandParameter="Open"
@@ -370,7 +367,6 @@
                     Command="{Binding NavOperateCommand}"
                     CommandParameter="RunCycle"
                     Content="&#xe6ea;"
-                    Cursor="Hand"
                     Foreground="{Binding Source={StaticResource RightControl}, Path=Ins.RunCycle, Converter={StaticResource Bool2GreenColorConverter}}"
                     IsEnabled="{Binding Source={StaticResource IsEnableControl}, Path=Ins.RunCycle}"
                     Style="{StaticResource NavOperateButtonStyle}"

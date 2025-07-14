@@ -1,16 +1,9 @@
 ﻿using HalconDotNet;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using VM.Halcon.Config;
-using VM.Start.Common;
 using VM.Start.Common.Enums;
 using VM.Start.Common.Helper;
 using VM.Start.Events;

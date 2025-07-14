@@ -23,9 +23,6 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
-                    <cvt:EnumConverter x:Key="EnumConverter"/>
-                    <cvt:EnumToVisibilityConverter x:Key="EnumToVisibilityConverter"/>
-                    <cvt:StatusConverter x:Key="StatusConverter"/>
                 </ResourceDictionary>
                 <ResourceDictionary   Source="pack://application:,,,/VM.Start;component/Assets/Collection.xaml"/>
             </ResourceDictionary.MergedDictionaries>

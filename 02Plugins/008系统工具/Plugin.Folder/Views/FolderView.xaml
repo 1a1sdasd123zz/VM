@@ -7,7 +7,5 @@
                 xmlns:local="clr-namespace:Plugin.Folder.Views"
                 mc:Ignorable="d" Icon="/Plugin.Folder;component/Assets/Images/Tool/Folder.png"
                 >
-    <Grid>
-            
-    </Grid>
+    <Grid />
 </vb:ModuleViewBase>

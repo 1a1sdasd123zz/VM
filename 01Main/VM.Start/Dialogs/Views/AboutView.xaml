@@ -48,13 +48,13 @@
                 <RowDefinition/>
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="    警告：本计算机程序受著作法和国际公约的保护，未经授权擅自复制或传播本程序的部分或者全部，可能受到严厉的民事及刑事制裁，并将在法律许可的范围内受到最大可能的起诉。" TextWrapping="Wrap"></TextBlock>
+            <TextBlock Text="    警告：本计算机程序受著作法和国际公约的保护，未经授权擅自复制或传播本程序的部分或者全部，可能受到严厉的民事及刑事制裁，并将在法律许可的范围内受到最大可能的起诉。" TextWrapping="Wrap" />
             <StackPanel Grid.Row="1">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="激活状态："></TextBlock>
-                    <TextBlock Text="{Binding ActiveStateText}" Foreground="{Binding ActiveStateColor}" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="激活状态：" />
+                    <TextBlock Text="{Binding ActiveStateText}" Foreground="{Binding ActiveStateColor}" FontWeight="Bold" />
                 </StackPanel>
-                <TextBlock Text="All right reserved" Margin="0 5" FontStyle="Italic" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="All right reserved" Margin="0 5" FontStyle="Italic" FontWeight="Bold" />
             </StackPanel>
         </Grid>
         <Grid Grid.Column="1">

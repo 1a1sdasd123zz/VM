@@ -3,6 +3,5 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Translation="clr-namespace:ICSharpCode.WpfDesign.Designer"
 >
-    <MenuItem Header="Convert To Figures" Click="Click_ConvertToFigures">
-    </MenuItem>
+    <MenuItem Header="Convert To Figures" Click="Click_ConvertToFigures" />
 </ContextMenu>

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using ICSharpCode.WpfDesign.XamlDom;
 
 namespace VM.Start.UIDesign

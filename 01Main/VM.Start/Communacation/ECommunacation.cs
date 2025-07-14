@@ -1,22 +1,16 @@
 ﻿using DMSkin.Socket;
-using VM.Start.Communacation;
 using PCComm;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using VM.Start.Common.Provide;
 using VM.Start.Common.Enums;
 using HslCommunication.ModBus;
-using HslCommunication;
 using System.IO.Ports;
-using VM.Halcon.Helper;
 using VM.Start.Common.Helper;
 using VM.Start.Events;
 

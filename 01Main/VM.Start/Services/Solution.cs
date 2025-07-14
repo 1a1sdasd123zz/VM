@@ -1,26 +1,17 @@
-﻿using EventMgrLib;
-using ICSharpCode.NRefactory.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 //using VisionCore.PLC.Communacation;
 using VM.Start.Common;
 using VM.Start.Common.Enums;
-using VM.Start.Common.Extension;
 using VM.Start.Common.Helper;
 using VM.Start.Common.RightControl;
 using VM.Start.Communacation;
-using VM.Start.Core;
 using VM.Start.Dialogs.Views;
-using VM.Start.Events;
 using VM.Start.Models;
 using VM.Start.ViewModels;
-using VM.Start.Views;
 using VM.Start.Views.Dock;
 
 namespace VM.Start.Services

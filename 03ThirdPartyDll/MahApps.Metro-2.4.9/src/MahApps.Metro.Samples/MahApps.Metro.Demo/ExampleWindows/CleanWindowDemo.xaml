@@ -27,15 +27,6 @@
                 </ObjectDataProvider.MethodParameters>
             </ObjectDataProvider>
 
-            <DataTemplate x:Key="Temp0">
-                <TextBlock Text="Nothing selected" />
-            </DataTemplate>
-            <DataTemplate x:Key="Temp1">
-                <TextBlock Text="Something about Item 1" />
-            </DataTemplate>
-            <DataTemplate x:Key="Temp2">
-                <TextBlock Text="Another thing about Item 2" />
-            </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
 

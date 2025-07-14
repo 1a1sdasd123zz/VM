@@ -37,8 +37,7 @@
 			</Border.Resources>
 			<ListBox
 				x:Name="ListBox"
-				SelectionChanged="ListBox_SelectionChanged" ItemTemplateSelector="{StaticResource CollectionTemplateSelector}">
-			</ListBox>
+				SelectionChanged="ListBox_SelectionChanged" ItemTemplateSelector="{StaticResource CollectionTemplateSelector}" />
 		</Border>
 		<ComboBox Name="ItemDataType"
 				  Height="23"

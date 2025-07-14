@@ -134,9 +134,7 @@
                                     FontSize="{TemplateBinding mah:TextBoxHelper.ButtonFontSize}"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsTabStop="False"
-                                    Style="{DynamicResource MahApps.Styles.Button.Chromeless}"
-                                    >
-                            </Button>
+                                    Style="{DynamicResource MahApps.Styles.Button.Chromeless}" />
 
                             <Button x:Name="PART_ClearText"
                                     Grid.Row="0"

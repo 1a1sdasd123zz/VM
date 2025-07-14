@@ -38,7 +38,6 @@
     WindowState="Maximized">
     <FrameworkElement.Resources>
         <ResourceDictionary>
-            <ser:Solution x:Key="Solution" />
         </ResourceDictionary>
     </FrameworkElement.Resources>
     <mah:MetroWindow.LeftWindowCommands>

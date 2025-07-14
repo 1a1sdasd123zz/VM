@@ -39,7 +39,7 @@
 								<ColumnDefinition Width="Auto"/>
 							</Grid.ColumnDefinitions>
 								<Grid x:Name="markGrid">
-									<TextBlock Margin="0,-2,0,0" x:Name="optionMark" FontWeight="Bold" Text="-"></TextBlock>
+									<TextBlock Margin="0,-2,0,0" x:Name="optionMark" FontWeight="Bold" Text="-" />
 								</Grid>
 							</Grid>
 						<ControlTemplate.Triggers>
@@ -61,7 +61,7 @@
 		</Style>
 	</UserControl.Resources>
 	<StackPanel Orientation="Horizontal" DataContext="{Binding ElementName=root}">
-		<CheckBox Margin="2,0,2,0" VerticalAlignment="Center" Style="{StaticResource negativeCheckbox}" IsThreeState="False" IsChecked="{Binding Neagtive}"></CheckBox>
+		<CheckBox Margin="2,0,2,0" VerticalAlignment="Center" Style="{StaticResource negativeCheckbox}" IsThreeState="False" IsChecked="{Binding Neagtive}" />
 		<widgets:NumericUpDown MinWidth="40" Value="{Binding Days}" Minimum="-1" Maximum="10675199" />
 		<TextBlock Text="d " />
 		<widgets:NumericUpDown MinWidth="36" Value="{Binding Hours}" Minimum="-1" Maximum="25" />

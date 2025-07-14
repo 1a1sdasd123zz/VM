@@ -1,12 +1,8 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Markup;
-using ICSharpCode.AvalonEdit;
 using ICSharpCode.WpfDesign.Designer.Services;
 using VM.Start.ViewModels;
 

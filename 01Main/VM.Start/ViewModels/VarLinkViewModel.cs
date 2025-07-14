@@ -1,22 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
+﻿using System.Collections.ObjectModel;
 using EventMgrLib;
-using Microsoft.Win32;
-using VM.Start.Common;
-using VM.Start.Common.Enums;
 using VM.Start.Common.Helper;
 using VM.Start.Events;
 using VM.Start.Models;
-using VM.Start.PersistentData;
-using VM.Start.Services;
 using VM.Start.Views;
-using WPFLocalizeExtension.Engine;
 
 namespace VM.Start.ViewModels
 {

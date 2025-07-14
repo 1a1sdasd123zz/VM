@@ -1,6 +1,4 @@
 ﻿using EventMgrLib;
-using System.Threading.Tasks;
-using System.Threading;
 using System.Windows.Threading;
 using System.Windows;
 using System;
@@ -24,12 +22,9 @@ using System.Drawing.Imaging;
 using VM.Start.Common.Const;
 using VM.Start.Models;
 using VM.Start.Services;
-using HandyControl.Controls;
 using System.Windows.Media;
 using AvalonDock.Layout;
 using System.Linq;
-using System.Web.UI.WebControls;
-using HalconDotNet;
 
 namespace VM.Start.ViewModels
 {

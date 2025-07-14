@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace VM.Start.UIDesign
+﻿namespace VM.Start.UIDesign
 {
     public enum DocumentMode
     {

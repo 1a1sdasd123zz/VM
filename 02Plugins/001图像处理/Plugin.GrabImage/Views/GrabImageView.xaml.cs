@@ -1,13 +1,7 @@
-﻿using HalconDotNet;
-using Plugin.GrabImage.ViewModels;
-using System.IO;
+﻿using Plugin.GrabImage.ViewModels;
 using System.Windows;
 using VM.Halcon;
-using VM.Start.Common.Enums;
-using VM.Start.Common.Provide;
-using VM.Start.Communacation;
 using VM.Start.Core;
-using VM.Start.Views.Dock;
 
 namespace Plugin.GrabImage.Views
 {

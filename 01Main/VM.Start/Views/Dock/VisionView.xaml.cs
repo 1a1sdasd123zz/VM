@@ -1,39 +1,27 @@
-﻿using HalconDotNet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Forms.Integration;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using VM.Halcon;
 using VM.Halcon.Config;
 using VM.Start.Common.Enums;
 using VM.Start.ViewModels.Dock;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace VM.Start.Views.Dock
 {
     /// <summary>
     /// DataView.xaml 的交互逻辑
     /// </summary>
-    public partial class VisionView : System.Windows.Controls.UserControl
+    public partial class VisionView : UserControl
     {
         #region Singleton
         private static readonly VisionView _instance = new VisionView();
         private VisionView()
         {
             InitializeComponent();
-            this.DataContext = VisionViewModel.Ins;
+            DataContext = VisionViewModel.Ins;
             for (int i = 1; i <= 9; i++)
             {
                 GetImageBox(i);
@@ -420,8 +408,6 @@ namespace VM.Start.Views.Dock
                     Grid.SetRow(windowsFormsHost[8], 2);
                     Grid.SetColumn(windowsFormsHost[8], 2);
 
-                    break;
-                default:
                     break;
             }
         }

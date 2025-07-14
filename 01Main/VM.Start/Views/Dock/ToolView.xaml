@@ -13,7 +13,6 @@
     Loaded="ToolView_OnLoaded"
     mc:Ignorable="d">
     <UserControl.Resources>
-        <cvt:ExpanderToBooleanConverter x:Key="ExpanderToBooleanConverter" />
         <Style TargetType="{x:Type ListBox}">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />

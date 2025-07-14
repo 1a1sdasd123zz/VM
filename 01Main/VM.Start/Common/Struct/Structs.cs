@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace VM.Start.Common
+﻿namespace VM.Start.Common
 {
 
 }

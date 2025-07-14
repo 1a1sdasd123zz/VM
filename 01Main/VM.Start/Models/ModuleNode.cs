@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using VM.Start.Common.Enums;
-using VM.Start.Common.Helper;
 using VM.Start.Core;
 using VM.Start.Services;
 

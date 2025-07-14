@@ -40,8 +40,6 @@
 
     <Window.Resources>
         <ResourceDictionary>
-            <converter:Bool2VisibilityConverter x:Key="Bool2VisibilityConverter"/>
-            <rightControl:RightControl x:Key="RightControl"></rightControl:RightControl>
         </ResourceDictionary>
     </Window.Resources>
 

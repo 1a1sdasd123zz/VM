@@ -50,12 +50,12 @@ namespace VM.Halcon
             this.mCtrl_HWindow.Cursor = System.Windows.Forms.Cursors.Default;
             this.mCtrl_HWindow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mCtrl_HWindow.ImagePart = new System.Drawing.Rectangle(0, 0, 128, 128);
-            this.mCtrl_HWindow.Location = new System.Drawing.Point(10, 8);
+            this.mCtrl_HWindow.Location = new System.Drawing.Point(11, 9);
             this.mCtrl_HWindow.Margin = new System.Windows.Forms.Padding(0);
             this.mCtrl_HWindow.Name = "mCtrl_HWindow";
-            this.mCtrl_HWindow.Size = new System.Drawing.Size(798, 601);
+            this.mCtrl_HWindow.Size = new System.Drawing.Size(870, 687);
             this.mCtrl_HWindow.TabIndex = 0;
-            this.mCtrl_HWindow.WindowSize = new System.Drawing.Size(798, 601);
+            this.mCtrl_HWindow.WindowSize = new System.Drawing.Size(870, 687);
             this.mCtrl_HWindow.HMouseMove += new HalconDotNet.HMouseEventHandler(this.HWindowControl_HMouseMove);
             this.mCtrl_HWindow.MouseLeave += new System.EventHandler(this.mCtrl_HWindow_MouseLeave);
             // 
@@ -66,24 +66,24 @@ namespace VM.Halcon
             this.m_CtrlHStatusLabelCtrl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_CtrlHStatusLabelCtrl.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.m_CtrlHStatusLabelCtrl.ForeColor = System.Drawing.Color.White;
-            this.m_CtrlHStatusLabelCtrl.Location = new System.Drawing.Point(10, 581);
-            this.m_CtrlHStatusLabelCtrl.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.m_CtrlHStatusLabelCtrl.Location = new System.Drawing.Point(11, 671);
+            this.m_CtrlHStatusLabelCtrl.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.m_CtrlHStatusLabelCtrl.Name = "m_CtrlHStatusLabelCtrl";
-            this.m_CtrlHStatusLabelCtrl.Size = new System.Drawing.Size(0, 28);
+            this.m_CtrlHStatusLabelCtrl.Size = new System.Drawing.Size(0, 25);
             this.m_CtrlHStatusLabelCtrl.TabIndex = 1;
             // 
             // VMHWindowControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.m_CtrlHStatusLabelCtrl);
             this.Controls.Add(this.mCtrl_HWindow);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.Margin = new System.Windows.Forms.Padding(11, 9, 11, 9);
             this.Name = "VMHWindowControl";
-            this.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
-            this.Size = new System.Drawing.Size(818, 617);
+            this.Padding = new System.Windows.Forms.Padding(11, 9, 11, 9);
+            this.Size = new System.Drawing.Size(892, 705);
             this.ResumeLayout(false);
             this.PerformLayout();
 

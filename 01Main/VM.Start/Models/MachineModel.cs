@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VM.Start.Models
+﻿namespace VM.Start.Models
 {
     public class MachineModel
     {

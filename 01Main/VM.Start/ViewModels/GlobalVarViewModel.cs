@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using EventMgrLib;
 using HalconDotNet;
@@ -19,7 +15,6 @@ using VM.Start.Models;
 using VM.Start.PersistentData;
 using VM.Start.Services;
 using VM.Start.Views;
-using WPFLocalizeExtension.Engine;
 
 namespace VM.Start.ViewModels
 {

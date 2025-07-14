@@ -23,9 +23,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
                     <cvt:EnumConverter x:Key="EnumConverter"/>
-                    <cvt:EnumToVisibilityConverter x:Key="EnumToVisibilityConverter"/>
                     <cvt:StatusConverter x:Key="StatusConverter"/>
-                    <cvt:Bool2VisibilityConverter x:Key="Bool2VisibilityConverter"/>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

@@ -22,8 +22,6 @@
     <Window.Resources>
         <ResourceDictionary>
             <cvt:EnumConverter x:Key="EnumConverter"/>
-            <cvt:EnumToVisibilityConverter x:Key="EnumToVisibilityConverter"/>
-            <cvt:StatusConverter x:Key="StatusConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <mah:MetroWindow.LeftWindowCommands>
@@ -43,8 +41,7 @@
                 <ColumnDefinition Width="4"/>
                 <ColumnDefinition Width="350"/>
             </Grid.ColumnDefinitions>
-            <WinFormHost:WindowsFormsHost Margin="5" x:Name="winFormHost">
-            </WinFormHost:WindowsFormsHost>
+            <WinFormHost:WindowsFormsHost Margin="5" x:Name="winFormHost" />
             <GridSplitter Grid.Column="1"/>
             <Grid x:Name="gd"  Grid.Column="2">
                 <Grid.RowDefinitions>
@@ -122,8 +119,7 @@
         </Grid>
         <Border Grid.Row="1" BorderBrush="White" BorderThickness="0 0.5 0 0">
             <DockPanel LastChildFill="True">
-                <StackPanel Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                </StackPanel>
+                <StackPanel Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="btnExecute" Content="重新学习" HorizontalAlignment="Right" Margin="10 0" Command="{Binding RelearnCommand}"/>
                     <Button x:Name="btnCancel" Content="取消" HorizontalAlignment="Right" Margin="10 0" Click="btnCancel_Click"/>

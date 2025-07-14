@@ -1,18 +1,9 @@
-﻿using MaterialDesignThemes.Wpf;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using EventMgrLib;
+using MaterialDesignThemes.Wpf;
+using VM.Start.Common;
 using VM.Start.Communacation;
 using VM.Start.Events;
 using VM.Start.ViewModels;
@@ -31,8 +22,8 @@ namespace VM.Start.Views.Dock
         public DeviceStateView()
         {
             InitializeComponent();
-            this.DataContext = DeviceStateViewModel.Ins;
-            EventMgrLib.EventMgr.Ins
+            DataContext = DeviceStateViewModel.Ins;
+            EventMgr.Ins
                 .GetEvent<HardwareChangedEvent>()
                 .Subscribe(OnCommunicationChanged);
         }
@@ -46,7 +37,7 @@ namespace VM.Start.Views.Dock
         #region Method
         private void OnCommunicationChanged()
         {
-            Common.CommonMethods.UIAsync(() =>
+            CommonMethods.UIAsync(() =>
             {
                 wrapPanel.Children.Clear();
                 foreach (var item in CameraSetViewModel.Ins.CameraModels)
@@ -54,7 +45,7 @@ namespace VM.Start.Views.Dock
                     Chip chip = new Chip();
                     chip.Icon = "\ue66e";
                     chip.Content = item.CameraNo;
-                    chip.IconBackground = item.Connected == true ? Brushes.Lime : Brushes.Red;
+                    chip.IconBackground = item.Connected ? Brushes.Lime : Brushes.Red;
                     chip.ToolTip =
                         $"名称:{item.CameraNo}\r\n设备连接ID:{item.SerialNo}\r\n相机类型:{item.CameraType}\r\n备注:{item.Remarks}";
                     chip.MouseDoubleClick += Camera_MouseDoubleClick;
@@ -65,7 +56,7 @@ namespace VM.Start.Views.Dock
                     Chip chip = new Chip();
                     chip.Icon = "\ue640";
                     chip.Content = item.Remarks;
-                    chip.IconBackground = item.Connected == true ? Brushes.Lime : Brushes.Red;
+                    chip.IconBackground = item.Connected ? Brushes.Lime : Brushes.Red;
                     chip.ToolTip = item.Remarks + item.MotionNo;
                     chip.MouseDoubleClick += Motion_MouseDoubleClick;
                     wrapPanel.Children.Add(chip);
@@ -76,7 +67,7 @@ namespace VM.Start.Views.Dock
                 {
                     Chip chip = new Chip();
                     chip.Content = item.Key;
-                    chip.IconBackground = item.IsConnected == true ? Brushes.Lime : Brushes.Red;
+                    chip.IconBackground = item.IsConnected ? Brushes.Lime : Brushes.Red;
                     chip.ToolTip = item.GetInfoStr();
                     chip.MouseDoubleClick += Communication_MouseDoubleClick;
                     wrapPanel.Children.Add(chip);
@@ -86,7 +77,7 @@ namespace VM.Start.Views.Dock
                     Chip chip = new Chip();
                     chip.Icon = "\ue640";
                     chip.Content = item.LaserName;
-                    chip.IconBackground = item.IsInit == true ? Brushes.Lime : Brushes.Red;
+                    chip.IconBackground = item.IsInit ? Brushes.Lime : Brushes.Red;
                     chip.ToolTip = item.LaserName + item.LaserIndex;
                     chip.MouseDoubleClick += Laser_MouseDoubleClick;
                     wrapPanel.Children.Add(chip);

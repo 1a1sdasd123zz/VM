@@ -78,28 +78,6 @@
                 <Setter Property="Header" Value="{Binding Mode=OneTime}" />
             </Style>
 
-            <UserControl x:Key="CustomDialogTest"
-                         x:Name="CustomDialogTest"
-                         MinHeight="200">
-
-                <TextBlock x:Name="MessageTextBlock" Text="Message shown by this custom Dialog." />
-
-            </UserControl>
-
-            <UserControl x:Key="CustomCloseDialogTest" x:Name="CustomCloseDialogTest">
-
-                <StackPanel>
-                    <TextBlock Height="30"
-                               Margin="0 4"
-                               Text="This dialog allows arbitrary content. You have to close it yourself by clicking the close button below."
-                               TextWrapping="Wrap" />
-                    <Button Click="CloseCustomDialog"
-                            Content="Close Me!"
-                            Style="{DynamicResource MahApps.Styles.Button.Dialogs}" />
-                </StackPanel>
-
-            </UserControl>
-
         </ResourceDictionary>
     </Window.Resources>
 

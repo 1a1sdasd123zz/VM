@@ -1,15 +1,6 @@
-﻿using EventMgrLib;
-using System;
-using System.Collections.Generic;
-using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VM.Start.Common;
+﻿using System;
 using VM.Start.Common.Enums;
 using VM.Start.Common.Helper;
-using VM.Start.Events;
-using VM.Start.ViewModels;
 
 namespace VM.Start.Models
 {

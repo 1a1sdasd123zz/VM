@@ -11,7 +11,7 @@
 					<ListBox x:Name="PART_ListBox">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
-								<TextBlock Text="{Binding Component, Mode=OneWay}"></TextBlock>
+								<TextBlock Text="{Binding Component, Mode=OneWay}" />
 							</DataTemplate>
 						</ListBox.ItemTemplate>
 					</ListBox>

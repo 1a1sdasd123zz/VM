@@ -139,8 +139,7 @@
 					<Grid>
 						<Rectangle VerticalAlignment="Top" Width="2" Height="30" Fill="Black" Margin="0,0,0,0" />
 						<Ellipse VerticalAlignment="Top" StrokeThickness="1" Name="thumbRectangle" SnapsToDevicePixels="True" Stroke="Black"
-						         Width="7" Height="7" Fill="Black">
-						</Ellipse>
+						         Width="7" Height="7" Fill="Black" />
 					</Grid>
 				</ControlTemplate>
 			</Setter.Value>
@@ -313,8 +312,7 @@
 							<Path Name="line1" StrokeDashArray="2,2"  Stretch="Fill" Stroke="{StaticResource HandleBrush}" StrokeThickness="1.5" Margin="0 0 0 0" Data="M0,-0.75 L1,-0.75" Grid.Column="0" />
 							<TextBlock Grid.Column="1" Text="{Binding Path=HandleLength, Mode=OneWay, Converter={x:Static Converters:FormatDoubleConverter.Instance }, RelativeSource={RelativeSource Mode=TemplatedParent}}" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="1,1,1,1">
 								<TextBlock.LayoutTransform>
-									<RotateTransform Angle="{Binding Path=TextTransform, RelativeSource={RelativeSource Mode=TemplatedParent}}" CenterX="0.5" CenterY="0.5">
-									</RotateTransform>
+									<RotateTransform Angle="{Binding Path=TextTransform, RelativeSource={RelativeSource Mode=TemplatedParent}}" CenterX="0.5" CenterY="0.5" />
 								</TextBlock.LayoutTransform>
 							</TextBlock>
 							<Path Name="line2" StrokeDashArray="2,2"  Stretch="Fill" Stroke="{StaticResource HandleBrush}" StrokeThickness="1.5" Margin="0 0 0 0" Data="M0,-0.75 L1,-0.75" Grid.Column="2" />
@@ -323,8 +321,7 @@
 						</Grid>
 						<!--  Rotate the handle and angle of rotation being set by the Margin type. See enum HandleOrientation  -->
 						<Grid.LayoutTransform>
-							<RotateTransform Angle="{Binding Path=Angle, RelativeSource={RelativeSource Mode=TemplatedParent}}">
-							</RotateTransform>
+							<RotateTransform Angle="{Binding Path=Angle, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
 						</Grid.LayoutTransform>
 					</Grid>
 				</ControlTemplate>
@@ -354,8 +351,7 @@
 							<Path Name="line1" Stretch="Fill" Stroke="{StaticResource HandleBrush}" StrokeThickness="1.5" Margin="0 0 0 0" Data="M0,-0.75 L1,-0.75" Grid.Column="0" />
 							<TextBlock Grid.Column="1" Text="{Binding Path=HandleLength, Mode=OneWay, Converter={x:Static Converters:FormatDoubleConverter.Instance }, RelativeSource={RelativeSource Mode=TemplatedParent}}" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="1,1,1,1">
 								<TextBlock.LayoutTransform>
-									<RotateTransform Angle="{Binding Path=TextTransform, RelativeSource={RelativeSource Mode=TemplatedParent}}" CenterX="0.5" CenterY="0.5">
-									</RotateTransform>
+									<RotateTransform Angle="{Binding Path=TextTransform, RelativeSource={RelativeSource Mode=TemplatedParent}}" CenterX="0.5" CenterY="0.5" />
 								</TextBlock.LayoutTransform>
 							</TextBlock>
 							<Path Name="line2" Stretch="Fill" Stroke="{StaticResource HandleBrush}" StrokeThickness="1.5" Margin="0 0 0 0" Data="M0,-0.75 L1,-0.75" Grid.Column="2" />
@@ -364,8 +360,7 @@
 						</Grid>
 						<!--  Rotate the handle and angle of rotation being set by the Margin type. See enum HandleOrientation  -->
 						<Grid.LayoutTransform>
-							<RotateTransform Angle="{Binding Path=Angle, RelativeSource={RelativeSource Mode=TemplatedParent}}">
-							</RotateTransform>
+							<RotateTransform Angle="{Binding Path=Angle, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
 						</Grid.LayoutTransform>
 					</Grid>
 				</ControlTemplate>

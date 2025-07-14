@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using VM.Start.Common.Helper;
-using VM.Start.Core;
 using VM.Start.UIDesign.Dialog.Views;
 using VM.Start.ViewModels;
 

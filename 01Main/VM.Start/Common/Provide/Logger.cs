@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using System.Diagnostics;
 using System.Text;
-using System.Windows;
-using System.Windows.Documents;
 using System.Windows.Media;
 using HandyControl.Controls;
 using NLog;
 using VM.Start.Common.Enums;
-using VM.Start.Dialogs.ViewModels;
 using VM.Start.Dialogs.Views;
 using VM.Start.Models;
 using VM.Start.Services;
-using VM.Start.ViewModels.Dock;
 
 namespace VM.Start.Common.Provide
 {

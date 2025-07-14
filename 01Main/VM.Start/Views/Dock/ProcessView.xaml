@@ -12,7 +12,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <cvt:Bool2VisibilityHiddenConverter x:Key="Bool2VisibilityHiddenConverter"/>
-        <rightControl:IsEnableControl x:Key="IsEnableControl"></rightControl:IsEnableControl>
+        <rightControl:IsEnableControl x:Key="IsEnableControl" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -23,15 +23,12 @@
         <ToolBar>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <Button x:Name="btnRunOnce" Content="&#xe67b;" Foreground="Lime" Style="{StaticResource ProcessBarButtonStyle}" ToolTip="当前项目单次执行" 
-                        Click="btnRunOnce_Click">
-                </Button>
+                        Click="btnRunOnce_Click" />
                 <Button x:Name="btnRunCycle" Content="&#xe612;" Foreground="Lime" Style="{StaticResource ProcessBarButtonStyle}" ToolTip="当前项目连续执行" 
-                        Click="btnRunCycle_Click">
-                </Button>
+                        Click="btnRunCycle_Click" />
                 <Button x:Name="btnStop" Content="&#xe8fa;" Foreground="Red" Style="{StaticResource ProcessBarButtonStyle}" ToolTip="停止当前项目" 
                         Click="btnStop_Click"
-                        IsEnabled="{Binding Source={StaticResource IsEnableControl},Path=Ins.Stop}">
-                </Button>
+                        IsEnabled="{Binding Source={StaticResource IsEnableControl},Path=Ins.Stop}" />
 
             </StackPanel>
         </ToolBar>
@@ -105,9 +102,9 @@
             </TreeView.ItemTemplate>
         </TreeView>
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
-            <TextBlock Text="流程总耗时:" FontSize="13" Margin="5"></TextBlock>
-            <TextBlock Text="{Binding ProcessTime}" FontSize="13" Margin="5"></TextBlock>
-            <TextBlock Text="ms" FontSize="13" Margin="5"></TextBlock>
+            <TextBlock Text="流程总耗时:" FontSize="13" Margin="5" />
+            <TextBlock Text="{Binding ProcessTime}" FontSize="13" Margin="5" />
+            <TextBlock Text="ms" FontSize="13" Margin="5" />
         </StackPanel>
     </Grid>
 </UserControl>

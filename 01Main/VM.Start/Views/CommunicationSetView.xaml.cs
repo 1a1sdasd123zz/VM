@@ -1,22 +1,7 @@
 ﻿using MahApps.Metro.Controls;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using VM.Start.Common;
 using VM.Start.Events;
-using VM.Start.Models;
 using VM.Start.ViewModels;
 
 namespace VM.Start.Views

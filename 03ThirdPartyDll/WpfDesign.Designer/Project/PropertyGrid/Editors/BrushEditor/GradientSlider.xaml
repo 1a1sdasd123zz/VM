@@ -5,34 +5,7 @@
              x:Name="this"
 >
 	<UserControl.Resources>
-		
-		<DataTemplate x:Key="GradientStopTemplate">
-			<Grid>
-				<Path x:Name="thumb"
-				      Data="m 6 0 l 6 5 v 12 h -12 v -12 z"
-				      Stroke="Black"
-				      Fill="Orange" />
-				<Border Margin="2 7 2 2"
-				        BorderBrush="Black"
-				        BorderThickness="1">
-					<Border BorderBrush="White"
-					        BorderThickness="1">
-						<Border.Background>
-							<SolidColorBrush Color="red" />
-						</Border.Background>
-					</Border>
-				</Border>
-			</Grid>
-			<DataTemplate.Triggers>
-				<Trigger Property="Selector.IsSelected"
-				         Value="True">
-					<Setter TargetName="thumb"
-					        Property="Fill"
-					        Value="Gold" />
-				</Trigger>
-			</DataTemplate.Triggers>
-		</DataTemplate>
-		
+
 		<Style TargetType="{x:Type BrushEditor:GradientThumb}">
 			<Setter Property="BrushEditor:NormalizedPanel.X"
 			        Value="{Binding Offset}" />

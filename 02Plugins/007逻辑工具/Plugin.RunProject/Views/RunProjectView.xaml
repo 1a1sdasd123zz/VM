@@ -31,9 +31,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
                     <cvt:EnumConverter x:Key="EnumConverter"/>
-                    <cvt:EnumToVisibilityConverter x:Key="EnumToVisibilityConverter"/>
                     <cvt:StatusConverter x:Key="StatusConverter"/>
-                    <cvt:Bool2VisibilityConverter x:Key="Bool2VisibilityConverter"/>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -52,11 +50,11 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <RadioButton Grid.Column="0" HorizontalAlignment="Center" Content="单次执行" 
-                             IsChecked="{Binding RunProjectType,Converter={StaticResource EnumConverter},ConverterParameter={x:Static enum:eRunProjectType.单次执行}}"></RadioButton>
+                             IsChecked="{Binding RunProjectType,Converter={StaticResource EnumConverter},ConverterParameter={x:Static enum:eRunProjectType.单次执行}}" />
                 <RadioButton Grid.Column="1" HorizontalAlignment="Center" Content="循环执行"
-                             IsChecked="{Binding RunProjectType,Converter={StaticResource EnumConverter},ConverterParameter={x:Static enum:eRunProjectType.循环执行}}"></RadioButton>
+                             IsChecked="{Binding RunProjectType,Converter={StaticResource EnumConverter},ConverterParameter={x:Static enum:eRunProjectType.循环执行}}" />
                 <RadioButton Grid.Column="2" HorizontalAlignment="Center" Content="停止执行"
-                             IsChecked="{Binding RunProjectType,Converter={StaticResource EnumConverter},ConverterParameter={x:Static enum:eRunProjectType.停止执行}}"></RadioButton>
+                             IsChecked="{Binding RunProjectType,Converter={StaticResource EnumConverter},ConverterParameter={x:Static enum:eRunProjectType.停止执行}}" />
             </Grid>
         </GroupBox >
         <GroupBox Header="项目" Grid.Row="1">

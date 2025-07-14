@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
+﻿using System.Windows.Media;
 using VM.Start.Common.Enums;
 using VM.Start.Common.Helper;
-using VM.Start.Dialogs.Views;
 
 namespace VM.Start.Dialogs.ViewModels
 {

@@ -9,7 +9,6 @@ using VM.Start.PersistentData;
 using System.Xml;
 using VM.Start.Common.Enums;
 using VM.Start.Common.Helper;
-using VM.Start.Common.Provide;
 using VM.Start.Models;
 
 namespace VM.Start.Dialogs.Views
